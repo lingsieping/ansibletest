@@ -1,0 +1,13 @@
+---
+- hosts: ubuntu
+  gather_facts: False
+  tasks:
+    
+    - name: Change Operator List
+      lineinfile:
+        path: "{{ path }}"
+        state: "{{ state }}"
+        backup: "{{ backup }}"
+        line: "{{ line }}"
+
+    - debug: msg= "{{ lookup('pipe','date') }}"
