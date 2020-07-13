@@ -5,9 +5,9 @@
     
     - name: Change Operator List
       lineinfile:
-        path: "{{ path }}"
-        state: "{{ state }}"
-        backup: "{{ backup }}"
+        path: /dg/operator.lst
+        state: present
+        backup: true
         line: "{{ line }}"
 
     - debug: msg= "{{ lookup('pipe','date') }}"
